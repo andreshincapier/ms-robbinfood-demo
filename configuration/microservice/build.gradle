@@ -1,0 +1,18 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile 'com.h2database:h2'
+    compile 'org.reactivecommons.utils:object-mapper:0.1.0'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.1.9.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.4.RELEASE'
+    runtime('org.springframework.boot:spring-boot-devtools')
+
+    compile project(":domain-usecase")
+    compile project(":driven-adapters-jpa-repository")
+    compile project(":entry-points-reactive-web")
+    compile project(":helpers-observability-helper")
+}

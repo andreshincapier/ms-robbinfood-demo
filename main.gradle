@@ -1,0 +1,83 @@
+apply plugin: 'idea'
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: "jacoco"
+    apply plugin: "maven"
+    apply plugin: "maven-publish"
+    apply plugin: "io.spring.dependency-management"
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://nexus.saas.hand-china.com/content/repositories/rdc/" }
+    }
+
+    dependencies {
+        compileOnly "org.projectlombok:lombok:$lombokVersion"
+
+        implementation 'org.modelmapper:modelmapper:2.3.6'
+        implementation 'io.projectreactor:reactor-core'
+        implementation 'io.projectreactor.addons:reactor-extra'
+        implementation 'org.slf4j:slf4j-api:1.7.28'
+        implementation "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+        implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+
+        annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+        testImplementation 'org.slf4j:slf4j-simple:1.7.30'
+        testImplementation 'org.slf4j:slf4j-api:1.7.30'
+        testImplementation 'org.apache.commons:commons-lang3:3.9'
+        testImplementation 'org.objenesis:objenesis:2.5.1'
+    }
+
+    configurations {
+        umlDoclet
+        developmentOnly
+        runtimeClasspath {
+            extendsFrom developmentOnly
+        }
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    jacoco {
+        toolVersion = '0.8.2'
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
+        }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+    
+    sonarqube {
+        properties {
+            property "sonar.language", "java"
+            property "sonar.junit.reportsPath", "build/test-results"
+            property "sonar.jacoco.reportPath", "build/jacoco/jacoco.exec"
+            property "sonar.java.binaries", "build/classes"
+            property "sonar.sources", "src/main/java"
+        }
+    }
+
+}

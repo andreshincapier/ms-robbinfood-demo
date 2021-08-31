@@ -1,0 +1,29 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.2.RELEASE'
+        springCloudVersion = 'Greenwich.M1'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/snapshot" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id "org.sonarqube" version "2.6"
+}
+
+apply from: './main.gradle'
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "${sonar_project_name}"
+        property "sonar.projectKey", "${sonar_project_key}"
+        property "sonar.projectVersion", "${version}"
+        property "sonar.sourceEncoding", "UTF-8"
+    }
+}

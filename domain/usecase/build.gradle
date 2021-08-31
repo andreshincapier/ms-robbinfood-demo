@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':domain-model')
+    compile project(':adapter-rest')
+    compile project(':domain-utility')
+}

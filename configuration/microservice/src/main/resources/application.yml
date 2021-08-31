@@ -1,0 +1,20 @@
+spring.application.name: ms-test
+server.port: 8080
+spring.datasource.url: jdbc:postgresql://ec2-54-161-58-21.compute-1.amazonaws.com:5432/d5lve0v6ulfdgs
+spring.datasource.username: wptvtfajldujgq
+spring.datasource.password: 3897c9bcfb553a9b6a8ac4348ba6df4316f86fbe3c3784a311dd5b3bb3d1e750
+spring.datasource.driver-class-name: org.postgresql.Driver
+hibernate.temp.use_jdbc_metadata_defaults: false
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
+spring.jpa.hibernate.ddl-auto: update
+jpa:
+  hibernate:
+    ddl-auto: none
+  show-sql: true
+  database: postgresql
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+spring:
+  jpa:
+    hibernate:
+      connection:
+        provider_class: org.hibernate.hikaricp.internal.HikariCPConnectionProvider
