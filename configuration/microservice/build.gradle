@@ -1,18 +1,19 @@
 apply plugin: 'org.springframework.boot'
 
+springBoot {
+    mainClassName = 'com.robinfood.demo.MainApplication'
+}
+
 dependencies {
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-    compile 'org.springframework.boot:spring-boot-starter'
-    compile 'com.h2database:h2'
-    compile 'org.reactivecommons.utils:object-mapper:0.1.0'
-    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
-    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.1.9.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.4.RELEASE'
-    runtime('org.springframework.boot:spring-boot-devtools')
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.9'
+    implementation "io.springfox:springfox-boot-starter:$swaggerVersion"
 
-    compile project(":domain-usecase")
-    compile project(":driven-adapters-jpa-repository")
-    compile project(":entry-points-reactive-web")
-    compile project(":helpers-observability-helper")
+    implementation project(":domain-usecase")
+    implementation project(":driven-adapters-jpa-repository")
+    implementation project(":entry-points-reactive-web")
+    implementation project(":helpers-observability-helper")
 }
