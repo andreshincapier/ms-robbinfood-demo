@@ -1,55 +1,47 @@
-//package co.com.proteccion.bizagi.microservice.usecase;
-//
-//import co.com.proteccion.bizagi.microservice.domain.configuration.Configuration;
-//import co.com.proteccion.bizagi.microservice.domain.configuration.gateway.ConfigurationRepository;
-//import org.junit.Test;
-//import org.junit.runner.RunWith;
-//import org.mockito.InjectMocks;
-//import org.mockito.Mock;
-//import org.mockito.junit.MockitoJUnitRunner;
-//import reactor.test.StepVerifier;
-//
-//import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-//
-//@RunWith(MockitoJUnitRunner.class)
-//public class ObserverUseCaseTest {
-//
-//    private static final String TARGET = "SAP";
-//    private static final String XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><user><name>Tove</name></user>";
-//
-//    @InjectMocks
-//    ObserverUseCase observerUseCase;
-//
-//    @Mock
-//    ConfigurationRepository repository;
-//
-//    Configuration configuration = Configuration
-//            .builder()
-//            .target("IBM")
-//            .host("127.0.0.1")
-//            .port(1212)
-//            .queueMng("TEST")
-//            .channel("CHANEL_TEST")
-//            .username("JOHN")
-//            .password("DOE")
-//            .queue("PRU")
-//            .sendertype("IBM_T")
-//            .build();
-//
-//    @Test
-//    public void fixedRateServiceTask() {
-//        StepVerifier.create(observerUseCase.fixedRateServiceTask())
-//                .assertNext(res -> {
-//                    assertThat(res).isEqualTo("OK");
-//                }).verifyComplete();
-//    }
-//
-//    @Test
-//    public void convertXMLToJsonTest() {
-//        StepVerifier.create(observerUseCase.convertXMLToJson(XML))
-//                .assertNext(res -> {
-//                    System.out.println(res);
-//                    assertThat(res).isEqualTo("{\"user\":{\"name\":\"Tove\"}}");
-//                }).verifyComplete();
-//    }
-//}
+package com.robinfood.demo;
+
+import com.robinfood.demo.gateway.Configuration;
+import com.robinfood.demo.gateway.ConfigurationRepository;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+import reactor.core.publisher.Mono;
+import reactor.test.StepVerifier;
+
+import static org.mockito.Mockito.when;
+
+
+@RunWith(MockitoJUnitRunner.class)
+public class ObserverUseCaseTest {
+
+    @InjectMocks
+    private ObserverUseCase useCase;
+
+    @Mock
+    private ConfigurationRepository configurationRepository;
+
+    @Before
+    public void init() {
+        final Mono<Configuration> someTest = Mono.just(configuration);
+
+        when(configurationRepository.findByTarget("1")).thenReturn(someTest);
+    }
+
+    @Test
+    public void shouldCreateGetHeaderByDate() {
+        StepVerifier.create(useCase.configuration())
+                .expectNext(configuration)
+                .verifyComplete();
+    }
+
+    private final Configuration configuration = Configuration
+            .builder()
+            .id("one")
+            .name("two")
+            .phone("next")
+            .build();
+
+}

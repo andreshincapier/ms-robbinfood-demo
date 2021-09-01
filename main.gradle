@@ -32,22 +32,24 @@ subprojects {
         testImplementation 'org.slf4j:slf4j-api:1.7.30'
         testImplementation 'org.apache.commons:commons-lang3:3.9'
         testImplementation 'org.objenesis:objenesis:2.5.1'
+
+
+        testImplementation group: 'org.mockito', name: 'mockito-inline', version: '3.10.0'
+        testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.10.0'
+        testImplementation group: 'junit', name: 'junit', version: '4.12'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'io.projectreactor:reactor-test'
+
+
+        //No test
+        implementation 'io.projectreactor:reactor-core'
+//        implementation 'io.projectreactor.addons:reactor-extra
+
     }
 
-    configurations {
-        umlDoclet
-        developmentOnly
-        runtimeClasspath {
-            extendsFrom developmentOnly
-        }
-        compileOnly {
-            extendsFrom annotationProcessor
-        }
-    }
-
-    jacoco {
-        toolVersion = '0.8.2'
-    }
+//    jacoco {
+//        toolVersion = '0.8.2'
+//    }
 
     jacocoTestReport {
         reports {
@@ -59,14 +61,6 @@ subprojects {
         imports {
             mavenBom("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
-    }
-
-    publishing {
-        publications {
-            mavenJava(MavenPublication) {
-                from components.java
-            }
         }
     }
 
