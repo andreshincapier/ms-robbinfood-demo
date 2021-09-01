@@ -69,14 +69,12 @@ subprojects {
             }
         }
     }
-    
+
     sonarqube {
         properties {
-            property "sonar.language", "java"
-            property "sonar.junit.reportsPath", "build/test-results"
-            property "sonar.jacoco.reportPath", "build/jacoco/jacoco.exec"
-            property "sonar.java.binaries", "build/classes"
-            property "sonar.sources", "src/main/java"
+            property "sonar.projectKey", "andreshincapier_ms-robbinfood-demo"
+            property "sonar.organization", "andreshincapier-key"
+            property "sonar.host.url", "https://sonarcloud.io"
         }
     }
 
