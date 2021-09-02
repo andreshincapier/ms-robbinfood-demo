@@ -21,7 +21,7 @@ public class AnswerData {
     private String lastName;
 
     @Column(name = "question_id")
-    private String question_id;
+    private String questionId;
 
     @Column(name = "name")
     private String name;
