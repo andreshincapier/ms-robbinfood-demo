@@ -1,7 +1,5 @@
-package com.demo.robinfood.postgres.repository.impl;
+package com.robinfood.demo.jpa.entities.customers;
 
-import com.demo.robinfood.postgres.repository.entity.CustomersEntity;
-import com.demo.robinfood.postgres.repository.jpa.JpaCustomersRepository;
 import com.robinfood.demo.entity.Customers;
 import com.robinfood.demo.reactive.repository.jpa.AdapterOperations;
 import com.robinfood.demo.repository.mongo.CustomersRepository;
@@ -34,29 +32,9 @@ public class CustomersRepositoryImplement extends AdapterOperations<Customers, C
         return null;
     }
 
-//    @Override
-//    public Mono<Customers> findByName(String name) {
-//        return null;
-//    }
-//
-//    @Override
-//    public Flux<Customers> findAll() {
-//        return doQueryMany(() -> repository.findAll());
-//    }
-//
-//    @Override
-//    public Mono<Customers> findById(String customersId) {
-//        return Mono.justOrEmpty(repository.findById(customersId))
-//                .map(this::toEntity);
-//    }
-//
-//    @Override
-//    public Flux<Customers> findAllByStatus(String status) {
-//        return doQueryMany(() -> repository.findAllByStatus(status));
-//    }
-//
-//    @Override
-//    public Mono<Customers> save(Customers customer) {
-//        return null;
-//    }
+    @Override
+    public Mono<Customers> findById(String customersId) {
+        return Mono.justOrEmpty(repository.findById(customersId))
+                .map(this::toEntity);
+    }
 }

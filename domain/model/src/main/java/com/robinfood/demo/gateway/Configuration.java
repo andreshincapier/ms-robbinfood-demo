@@ -12,6 +12,6 @@ public class Configuration {
 
     private final String id;
     private final String name;
-    private final String phone;
+    private final Long phone;
 
 }

@@ -9,6 +9,7 @@ import lombok.Data;
 @Builder(toBuilder = true)
 public class Customers {
 
+    private String id;
     private String name;
     private String lastName;
     private Long phone;

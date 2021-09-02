@@ -1,6 +1,5 @@
-package com.demo.robinfood.postgres.repository.jpa;
+package com.robinfood.demo.jpa.entities.customers;
 
-import com.demo.robinfood.postgres.repository.entity.CustomersEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.QueryByExampleExecutor;
 

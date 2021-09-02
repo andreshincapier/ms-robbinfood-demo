@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.entities;
+package com.robinfood.demo.jpa.entities.configuration;
 
 import com.robinfood.demo.gateway.Configuration;
 import com.robinfood.demo.gateway.ConfigurationRepository;
