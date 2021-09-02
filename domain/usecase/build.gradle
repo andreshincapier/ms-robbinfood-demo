@@ -1,6 +1,10 @@
 dependencies {
-    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.2'
     compile project(':domain-model')
     compile project(':adapter-rest')
     compile project(':domain-utility')
+}
+
+repositories {
+    mavenCentral()
 }
