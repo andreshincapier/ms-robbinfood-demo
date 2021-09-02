@@ -19,16 +19,16 @@ public class UseCaseConfigTest {
     @Mock
     ConfigurationRepository repository;
 
-//    @Test
-//    public void objectMapperIsNotNull() {
-//        ObjectMapper objectMapper = useCaseConfig.objectMapper();
-//        assertThat(objectMapper).isNotNull();
-//    }
-//
-//    @Test
-//    public void saveMessage() {
-//        ObserverUseCase messageUseCase = useCaseConfig.observerUseCase(repository);
-//        assertThat(messageUseCase).isNotNull();
-//    }
+    @Test
+    public void objectMapperIsNotNull() {
+        ObjectMapper objectMapper = useCaseConfig.objectMapper();
+        assertThat(objectMapper).isNotNull();
+    }
+
+    @Test
+    public void saveMessage() {
+        ObserverUseCase messageUseCase = useCaseConfig.observerUseCase(repository);
+        assertThat(messageUseCase).isNotNull();
+    }
 
 }

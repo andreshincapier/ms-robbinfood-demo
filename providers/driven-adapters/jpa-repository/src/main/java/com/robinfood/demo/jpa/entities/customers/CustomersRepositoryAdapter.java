@@ -2,7 +2,7 @@ package com.robinfood.demo.jpa.entities.customers;
 
 import com.robinfood.demo.entity.Customers;
 import com.robinfood.demo.reactive.repository.jpa.AdapterOperations;
-import com.robinfood.demo.repository.mongo.CustomersRepository;
+import com.robinfood.demo.repository.CustomersRepository;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -10,10 +10,10 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
-public class CustomersRepositoryImplement extends AdapterOperations<Customers, CustomersEntity, String, JpaCustomersRepository> implements CustomersRepository {
+public class CustomersRepositoryAdapter extends AdapterOperations<Customers, CustomersData, String, CustomersDataRepository> implements CustomersRepository {
 
     @Autowired
-    public CustomersRepositoryImplement(JpaCustomersRepository repository, ObjectMapper mapper) {
+    public CustomersRepositoryAdapter(CustomersDataRepository repository, ObjectMapper mapper) {
         super(repository, mapper, d -> mapper.mapBuilder(d, Customers.CustomersBuilder.class).build());
     }
 

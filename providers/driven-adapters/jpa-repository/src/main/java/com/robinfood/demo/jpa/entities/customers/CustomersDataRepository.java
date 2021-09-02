@@ -6,6 +6,6 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 import java.util.List;
 
 
-public interface JpaCustomersRepository extends CrudRepository<CustomersEntity, String>, QueryByExampleExecutor<CustomersEntity> {
-    List<CustomersEntity> findAllByStatus(String status);
+public interface CustomersDataRepository extends CrudRepository<CustomersData, String>, QueryByExampleExecutor<CustomersData> {
+    List<CustomersData> findAllByStatus(String status);
 }

@@ -1,7 +1,7 @@
 package com.robinfood.demo;
 
 import com.robinfood.demo.gateway.ConfigurationRepository;
-import com.robinfood.demo.repository.mongo.CustomersRepository;
+import com.robinfood.demo.repository.SurveyRepository;
 import org.reactivecommons.utils.ObjectMapper;
 import org.reactivecommons.utils.ObjectMapperImp;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,12 @@ public class UseCaseConfig {
     }
 
     @Bean
-    public ObserverUseCase observerUseCase(ConfigurationRepository configurationRepository, CustomersRepository customersRepository) {
-        return new ObserverUseCase(configurationRepository, customersRepository);
+    public ObserverUseCase observerUseCase(ConfigurationRepository configurationRepository) {
+        return new ObserverUseCase(configurationRepository);
+    }
+
+    @Bean
+    public SurveyUseCase surveyUseCase(SurveyRepository surveyRepository) {
+        return new SurveyUseCase(surveyRepository);
     }
 }

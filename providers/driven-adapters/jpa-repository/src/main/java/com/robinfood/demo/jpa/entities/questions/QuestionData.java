@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.entities.customers;
+package com.robinfood.demo.jpa.entities.questions;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,23 +11,17 @@ import javax.persistence.Table;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "customers")
-public class CustomersEntity {
+@Table(name = "survey")
+public class QuestionData {
 
     @Id
     private String id;
 
-    @Column(name = "name")
+    @Column(name = "content")
     private String name;
 
-    @Column(name = "last_name")
+    @Column(name = "survey_id")
     private String lastName;
-
-    @Column(name = "phone")
-    private Long phone;
-
-    @Column(name = "email")
-    private String email;
 
     @Column(name = "status")
     private String status;

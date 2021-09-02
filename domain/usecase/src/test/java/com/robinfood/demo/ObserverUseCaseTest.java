@@ -41,7 +41,7 @@ public class ObserverUseCaseTest {
             .builder()
             .id("one")
             .name("two")
-            .phone("next")
+            .phone(10044848L)
             .build();
 
 }

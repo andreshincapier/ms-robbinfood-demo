@@ -1,4 +1,4 @@
-package com.robinfood.demo.repository.mongo;
+package com.robinfood.demo.repository;
 
 import com.robinfood.demo.entity.Customers;
 import reactor.core.publisher.Mono;

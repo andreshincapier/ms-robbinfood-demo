@@ -1,4 +1,4 @@
-package com.robinfood.demo.repository.mongo;
+package com.robinfood.demo.repository;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
