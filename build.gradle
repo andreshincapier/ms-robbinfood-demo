@@ -7,22 +7,24 @@ buildscript {
         mavenCentral()
         maven { url "https://repo.spring.io/milestone" }
         maven { url "https://repo.spring.io/snapshot" }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3"
     }
 }
 
-plugins {
-    id "org.sonarqube" version "3.3"
-}
+apply plugin: "org.sonarqube"
 
 apply from: './main.gradle'
 
 sonarqube {
     properties {
-        property "sonar.projectKey", "andreshincapier_ms-robbinfood-demo"
-        property "sonar.organization", "andreshincapier-key"
+        property "sonar.projectKey", "ms-robonfood"
+        property "sonar.organization", "andreshincapier-key-82132"
         property "sonar.host.url", "https://sonarcloud.io"
     }
 }
