@@ -1,4 +1,4 @@
-package com.robinfood.demo;
+package com.robinfood.demo.handler;
 
 
 import com.robinfood.demo.entity.Configuration;
@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
-public class ObserverUseCase {
+public class ObserverHandlerUseCase {
 
     private final ConfigurationRepository configurationRepository;
 

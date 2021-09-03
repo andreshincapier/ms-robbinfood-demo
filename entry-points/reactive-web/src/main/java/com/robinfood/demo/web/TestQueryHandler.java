@@ -1,6 +1,6 @@
 package com.robinfood.demo.web;
 
-import com.robinfood.demo.ObserverUseCase;
+import com.robinfood.demo.handler.ObserverHandlerUseCase;
 import com.robinfood.demo.entity.Configuration;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +13,11 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 public class TestQueryHandler {
 
-    private final ObserverUseCase observerUseCase;
+    private final ObserverHandlerUseCase observerHandlerUseCase;
 
     @GetMapping("/test")
     public Mono<Configuration> getCOnfigurations() {
-        return observerUseCase.configuration();
+        return observerHandlerUseCase.configuration();
     }
 
 }

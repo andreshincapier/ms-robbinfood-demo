@@ -1,4 +1,4 @@
-package com.robinfood.demo;
+package com.robinfood.demo.handler;
 
 import com.robinfood.demo.dto.SurveyQuestionDTO;
 import com.robinfood.demo.entity.Survey;
@@ -13,7 +13,7 @@ import java.util.Collections;
 
 @Slf4j
 @RequiredArgsConstructor
-public class SurveyUseCase {
+public class SurveyHandlerUseCase {
 
     private final SurveyRepository surveyRepository;
     private final QuestionRepository questionRepository;

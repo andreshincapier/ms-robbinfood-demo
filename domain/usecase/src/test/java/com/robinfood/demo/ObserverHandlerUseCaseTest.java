@@ -1,6 +1,7 @@
 package com.robinfood.demo;
 
 import com.robinfood.demo.entity.Configuration;
+import com.robinfood.demo.handler.ObserverHandlerUseCase;
 import com.robinfood.demo.repository.ConfigurationRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,10 +16,10 @@ import static org.mockito.Mockito.when;
 
 
 @RunWith(MockitoJUnitRunner.class)
-public class ObserverUseCaseTest {
+public class ObserverHandlerUseCaseTest {
 
     @InjectMocks
-    private ObserverUseCase useCase;
+    private ObserverHandlerUseCase useCase;
 
     @Mock
     private ConfigurationRepository configurationRepository;

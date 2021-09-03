@@ -1,6 +1,6 @@
 package com.robinfood.demo.web;
 
-import com.robinfood.demo.SurveyUseCase;
+import com.robinfood.demo.handler.SurveyHandlerUseCase;
 import com.robinfood.demo.dto.SurveyQuestionDTO;
 import com.robinfood.demo.entity.Survey;
 import lombok.AllArgsConstructor;
@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 public class SurveyQueryHandler {
 
-    private final SurveyUseCase useCase;
+    private final SurveyHandlerUseCase useCase;
 
     @GetMapping("/list-all-active")
     public Flux<Survey> listAllActiveSurvey() {

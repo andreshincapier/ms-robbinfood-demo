@@ -1,5 +1,6 @@
 package com.robinfood.demo;
 
+import com.robinfood.demo.handler.ObserverHandlerUseCase;
 import com.robinfood.demo.repository.ConfigurationRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +28,7 @@ public class UseCaseConfigTest {
 
     @Test
     public void saveMessage() {
-        ObserverUseCase messageUseCase = useCaseConfig.observerUseCase(repository);
+        ObserverHandlerUseCase messageUseCase = useCaseConfig.observerUseCase(repository);
         assertThat(messageUseCase).isNotNull();
     }
 
