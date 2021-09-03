@@ -20,7 +20,7 @@ public class QuestionData {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "survey_id_pk")
+    @Column(name = "survey_id_fk")
     private String surveyId;
 
     @Column(name = "status")

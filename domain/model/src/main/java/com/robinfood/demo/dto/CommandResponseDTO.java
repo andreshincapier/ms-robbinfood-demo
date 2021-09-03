@@ -7,9 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class UserAnswersDTO {
+public class CommandResponseDTO {
 
-    private String questionId;
-    private String answer;
-
+    private String message;
 }

@@ -3,10 +3,7 @@ package com.robinfood.demo;
 import com.robinfood.demo.command.CustomerAnswersCommandUseCase;
 import com.robinfood.demo.handler.ObserverHandlerUseCase;
 import com.robinfood.demo.handler.SurveyHandlerUseCase;
-import com.robinfood.demo.repository.ConfigurationRepository;
-import com.robinfood.demo.repository.CustomersRepository;
-import com.robinfood.demo.repository.QuestionRepository;
-import com.robinfood.demo.repository.SurveyRepository;
+import com.robinfood.demo.repository.*;
 import org.reactivecommons.utils.ObjectMapper;
 import org.reactivecommons.utils.ObjectMapperImp;
 import org.springframework.context.annotation.Bean;
@@ -31,7 +28,9 @@ public class UseCaseConfig {
     }
 
     @Bean
-    public CustomerAnswersCommandUseCase surveyCustomerAnswersCommandUseCaseyUseCase(SurveyRepository surveyRepository, QuestionRepository questionRepository, CustomersRepository customersRepository) {
-        return new CustomerAnswersCommandUseCase(surveyRepository, questionRepository, customersRepository);
+    public CustomerAnswersCommandUseCase surveyCustomerAnswersCommandUseCaseyUseCase(CustomersRepository customersRepository,
+                                                                                     CustomersAnswerRepository customersAnswerRepository,
+                                                                                     CustomersAnswerDetailRepository customersAnswerDetailRepository) {
+        return new CustomerAnswersCommandUseCase(customersRepository, customersAnswerRepository, customersAnswerDetailRepository);
     }
 }

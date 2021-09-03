@@ -1,12 +1,12 @@
 package com.robinfood.demo.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@ToString
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class UserSurveyAnswersDTO {
@@ -17,5 +17,4 @@ public class UserSurveyAnswersDTO {
     private String email;
     private String surveyId;
     private List<UserAnswersDTO> questionList;
-
 }

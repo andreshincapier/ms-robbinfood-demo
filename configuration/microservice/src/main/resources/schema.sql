@@ -1,9 +1,9 @@
 CREATE TABLE survey
 (
-    id          VARCHAR(80) NOT NULL,
+    id          VARCHAR(80)  NOT NULL,
     name        VARCHAR(100) NOT NULL,
     description VARCHAR(255) NOT NULL,
-    status      VARCHAR(50) NOT NULL,
+    status      VARCHAR(50)  NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -55,8 +55,7 @@ CREATE TABLE customers_answers
     customer_id_fk        VARCHAR(80) NOT NULL,
     creation_date         int8        NOT NULL,
     customer_survey_id_fk VARCHAR(80) NOT NULL,
-    status                VARCHAR(50),
-    PRIMARY KEY (id),
+        PRIMARY KEY (id),
     FOREIGN KEY (customer_survey_id_fk) REFERENCES survey (id),
     FOREIGN KEY (customer_id_fk) REFERENCES customers (id)
 );
@@ -67,7 +66,6 @@ CREATE TABLE customers_answers_detail
     customers_answers_fk VARCHAR(80) NOT NULL,
     question_fk          VARCHAR(80) NOT NULL,
     answer               VARCHAR(80) NOT NULL,
-    status               VARCHAR(50) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (customers_answers_fk) REFERENCES customers_answers (id),
     FOREIGN KEY (question_fk) REFERENCES question (id)

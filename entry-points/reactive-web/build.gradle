@@ -2,8 +2,9 @@ dependencies {
     compile project(':domain-model')
     compile project(':domain-usecase')
 
-    compileOnly "org.springframework.boot:spring-boot-configuration-processor"
+    compileOnly 'org.springframework.boot:spring-boot-configuration-processor:2.5.4'
 
-    implementation("org.springframework.boot:spring-boot-starter-webflux")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    implementation('org.springframework.boot:spring-boot-starter-webflux:2.5.4')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test:2.5.4')
 }
