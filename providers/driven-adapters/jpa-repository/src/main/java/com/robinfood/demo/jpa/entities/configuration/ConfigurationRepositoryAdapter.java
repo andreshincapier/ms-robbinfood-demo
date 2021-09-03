@@ -1,7 +1,7 @@
 package com.robinfood.demo.jpa.entities.configuration;
 
-import com.robinfood.demo.gateway.Configuration;
-import com.robinfood.demo.gateway.ConfigurationRepository;
+import com.robinfood.demo.entity.Configuration;
+import com.robinfood.demo.repository.ConfigurationRepository;
 import com.robinfood.demo.reactive.repository.jpa.AdapterOperations;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

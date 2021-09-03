@@ -1,8 +1,8 @@
 package com.robinfood.demo;
 
 
-import com.robinfood.demo.gateway.Configuration;
-import com.robinfood.demo.gateway.ConfigurationRepository;
+import com.robinfood.demo.entity.Configuration;
+import com.robinfood.demo.repository.ConfigurationRepository;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 

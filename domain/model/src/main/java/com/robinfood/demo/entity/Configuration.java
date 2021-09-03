@@ -1,4 +1,4 @@
-package com.robinfood.demo.gateway;
+package com.robinfood.demo.entity;
 
 
 import lombok.AllArgsConstructor;

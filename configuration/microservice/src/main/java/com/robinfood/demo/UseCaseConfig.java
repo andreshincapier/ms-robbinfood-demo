@@ -1,6 +1,7 @@
 package com.robinfood.demo;
 
-import com.robinfood.demo.gateway.ConfigurationRepository;
+import com.robinfood.demo.repository.ConfigurationRepository;
+import com.robinfood.demo.repository.QuestionRepository;
 import com.robinfood.demo.repository.SurveyRepository;
 import org.reactivecommons.utils.ObjectMapper;
 import org.reactivecommons.utils.ObjectMapperImp;
@@ -21,7 +22,7 @@ public class UseCaseConfig {
     }
 
     @Bean
-    public SurveyUseCase surveyUseCase(SurveyRepository surveyRepository) {
-        return new SurveyUseCase(surveyRepository);
+    public SurveyUseCase surveyUseCase(SurveyRepository surveyRepository, QuestionRepository questionRepository) {
+        return new SurveyUseCase(surveyRepository, questionRepository);
     }
 }

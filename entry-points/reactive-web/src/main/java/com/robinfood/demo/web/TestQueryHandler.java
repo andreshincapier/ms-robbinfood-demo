@@ -1,7 +1,7 @@
 package com.robinfood.demo.web;
 
 import com.robinfood.demo.ObserverUseCase;
-import com.robinfood.demo.gateway.Configuration;
+import com.robinfood.demo.entity.Configuration;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

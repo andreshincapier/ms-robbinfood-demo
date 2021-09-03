@@ -1,5 +1,6 @@
-package com.robinfood.demo.gateway;
+package com.robinfood.demo.repository;
 
+import com.robinfood.demo.entity.Configuration;
 import reactor.core.publisher.Mono;
 
 public interface ConfigurationRepository {

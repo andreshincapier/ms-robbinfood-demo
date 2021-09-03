@@ -11,17 +11,17 @@ import javax.persistence.Table;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "survey")
+@Table(name = "question")
 public class QuestionData {
 
     @Id
     private String id;
 
     @Column(name = "content")
-    private String name;
+    private String content;
 
-    @Column(name = "survey_id")
-    private String lastName;
+    @Column(name = "survey_id_pk")
+    private String surveyId;
 
     @Column(name = "status")
     private String status;

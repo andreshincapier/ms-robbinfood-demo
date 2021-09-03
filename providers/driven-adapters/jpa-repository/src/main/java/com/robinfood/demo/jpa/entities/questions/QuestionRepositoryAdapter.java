@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import static com.robinfood.demo.enums.StatusEnum.nameFromId;
+
 @Repository
 public class QuestionRepositoryAdapter extends AdapterOperations<Question, QuestionData, String, QuestionDataRepository> implements QuestionRepository {
 
@@ -30,5 +32,11 @@ public class QuestionRepositoryAdapter extends AdapterOperations<Question, Quest
     @Override
     public Flux<Question> findAllByStatus(String var1) {
         return null;
+    }
+
+    @Override
+    public Flux<Question> findAllBySurveyId(String surveyId) {
+        return doQueryMany(() -> repository.findAllBySurveyId(surveyId))
+                .doOnNext(dto -> dto.setStatus(nameFromId(dto.getStatus())));
     }
 }

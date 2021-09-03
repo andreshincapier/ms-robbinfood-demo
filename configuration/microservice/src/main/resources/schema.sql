@@ -18,3 +18,21 @@ VALUES ('2f3ac99c88c246208334e5f24f979179', 'MERCADEO', 'Encuesta estudio mercad
         '969e0631-2121-4965-aa4e-9779d5d6fab2'),
        ('28de502cc7c5498c8a9ad5819c890d3c', 'PUBLICIDAD', 'Encuesta inspecion publicidad',
         '38c1a58d-d435-4bf1-a1ba-0c82d5dc7f16');
+
+CREATE TABLE question
+(
+    id           varchar(80) NOT NULL,
+    content      varchar(100),
+    survey_id_pk varchar(255),
+    status       varchar(50),
+    PRIMARY KEY (id),
+    foreign key (survey_id_pk) references survey (id)
+);
+
+insert into question(id, content, survey_id_pk, status)
+values ('5ef8e7a9451940acad6fc79c4a51e199', '¿Qué tan satisfecho te sientes con este producto?',
+        '2f3ac99c88c246208334e5f24f979179', '38c1a58d-d435-4bf1-a1ba-0c82d5dc7f16'),
+       ('39e824f6fc884e6bb72c7709433683ea', '¿Te parece adecuado su precio?',
+        '2f3ac99c88c246208334e5f24f979179', '38c1a58d-d435-4bf1-a1ba-0c82d5dc7f16'),
+       ('7c4d5e604c5f468d80fd7fd42d9a7145', '¿Por qué eliges este producto?',
+        '2f3ac99c88c246208334e5f24f979179', '38c1a58d-d435-4bf1-a1ba-0c82d5dc7f16');
