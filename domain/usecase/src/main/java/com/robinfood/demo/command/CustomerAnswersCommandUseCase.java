@@ -10,11 +10,11 @@ import com.robinfood.demo.repository.CustomersAnswerRepository;
 import com.robinfood.demo.repository.CustomersRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import reactor.core.publisher.Mono;
 
 import static com.robinfood.demo.util.DateFunctions.getActualTimeLong;
 import static com.robinfood.demo.util.RandomUtil.unique;
+import static java.util.Objects.nonNull;
 import static reactor.core.publisher.Flux.fromIterable;
 import static reactor.core.publisher.Mono.just;
 
@@ -62,8 +62,9 @@ public class CustomerAnswersCommandUseCase {
     }
 
     private boolean validateData(UserSurveyAnswersDTO userSurveyAnswers) {
-        return StringUtils.isNoneBlank(userSurveyAnswers.getName()) &&
-                StringUtils.isNoneBlank(userSurveyAnswers.getEmail()) &&
-                StringUtils.isNoneBlank(userSurveyAnswers.getSurveyId());
+        return nonNull(userSurveyAnswers.getName()) &&
+                nonNull(userSurveyAnswers.getEmail()) &&
+                nonNull(userSurveyAnswers.getSurveyId()) &&
+                nonNull(userSurveyAnswers.getQuestionList());
     }
 }
