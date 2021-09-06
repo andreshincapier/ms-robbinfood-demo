@@ -1,7 +1,8 @@
 package com.robinfood.demo;
 
-import com.robinfood.demo.handler.ObserverHandlerUseCase;
-import com.robinfood.demo.repository.ConfigurationRepository;
+import com.robinfood.demo.command.CustomerAnswersCommandUseCase;
+import com.robinfood.demo.handler.SurveyHandlerUseCase;
+import com.robinfood.demo.repository.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -18,7 +19,19 @@ public class UseCaseConfigTest {
     UseCaseConfig useCaseConfig;
 
     @Mock
-    ConfigurationRepository repository;
+    SurveyRepository surveyRepository;
+
+    @Mock
+    QuestionRepository questionRepository;
+
+    @Mock
+    CustomersRepository customersRepository;
+
+    @Mock
+    CustomersAnswerRepository customersAnswerRepository;
+
+    @Mock
+    CustomersAnswerDetailRepository customersAnswerDetailRepository;
 
     @Test
     public void objectMapperIsNotNull() {
@@ -27,8 +40,17 @@ public class UseCaseConfigTest {
     }
 
     @Test
-    public void saveMessage() {
-        ObserverHandlerUseCase messageUseCase = useCaseConfig.observerUseCase(repository);
+    public void surveyUseCase() {
+        SurveyHandlerUseCase messageUseCase = useCaseConfig.surveyUseCase(surveyRepository, questionRepository);
+        assertThat(messageUseCase).isNotNull();
+    }
+
+    @Test
+    public void surveyCustomerAnswersCommandUseCaseyUseCase() {
+        CustomerAnswersCommandUseCase messageUseCase = useCaseConfig.surveyCustomerAnswersCommandUseCaseyUseCase(
+                customersRepository,
+                customersAnswerRepository,
+                customersAnswerDetailRepository);
         assertThat(messageUseCase).isNotNull();
     }
 
