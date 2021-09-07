@@ -1,7 +1,6 @@
 package com.robinfood.demo;
 
 import com.robinfood.demo.command.CustomerAnswersCommandUseCase;
-import com.robinfood.demo.handler.ObserverHandlerUseCase;
 import com.robinfood.demo.handler.SurveyHandlerUseCase;
 import com.robinfood.demo.repository.*;
 import org.reactivecommons.utils.ObjectMapper;
@@ -15,11 +14,6 @@ public class UseCaseConfig {
     @Bean
     public ObjectMapper objectMapper() {
         return new ObjectMapperImp();
-    }
-
-    @Bean
-    public ObserverHandlerUseCase observerUseCase(ConfigurationRepository configurationRepository) {
-        return new ObserverHandlerUseCase(configurationRepository);
     }
 
     @Bean

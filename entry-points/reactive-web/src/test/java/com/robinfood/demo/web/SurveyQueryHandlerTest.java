@@ -71,6 +71,7 @@ public class SurveyQueryHandlerTest {
             final HttpStatus status = consumer.getStatus();
             final SurveyQuestion body = consumer.getResponseBody();
             assertThat(status.is2xxSuccessful()).isTrue();
+            assertThat(body).isNotNull();
             assertThat(body.getId()).isEqualTo("123");
             assertThat(body.getName()).isEqualTo("Question");
         });

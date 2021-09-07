@@ -18,5 +18,4 @@ public class DateFunctions {
         var date = new Date(isoMillis + offsetMillis);
         return date.getTime();
     }
-
 }
