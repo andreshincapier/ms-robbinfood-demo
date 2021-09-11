@@ -10,9 +10,9 @@ FileTree buildFiles = fileTree(rootDir) {
 }
 
 String rootDirPath = rootDir.absolutePath + File.separator
-buildFiles.each { File buildFile ->
+buildFiles.each(({ File buildFile ->
 
-    boolean isDefaultName = 'build.gradle'.equals(buildFile.name)
+    boolean isDefaultName = 'build.gradle' == buildFile.name
     if (isDefaultName) {
         String projectName = buildFile.parentFile.name
         String projectPath = ':' + projectName;
@@ -31,4 +31,4 @@ buildFiles.each { File buildFile ->
         project.projectDir = buildFile.parentFile
         project.buildFileName = buildFile.name
     }
-}
+} as Closure))
