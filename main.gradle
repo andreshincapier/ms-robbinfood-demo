@@ -44,4 +44,15 @@ subprojects {
         }
     }
 
+    jacocoTestReport {
+        dependsOn test
+        group = "Reporting"
+        reports {
+            xml.enabled true
+            csv.enabled false
+            html.destination file("${buildDir}/jacocoHtml")
+        }
+        executionData(test)
+    }
+
 }
