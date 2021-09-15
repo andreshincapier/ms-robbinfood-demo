@@ -28,6 +28,7 @@ public class CustomerAnswersCommandUseCase {
 
     public Mono<CommandResponseDTO> saveCustomersAnswers(UserSurveyAnswersDTO surveyAnswers) {
         log.info("ENTER IN CustomerAnswersCommandUseCase :: saveCustomersAnswers {}", surveyAnswers);
+
         return Mono.justOrEmpty(surveyAnswers)
                 .filter(this::validateData)
                 .map(surveyAnswersDTO -> Customers.builder()

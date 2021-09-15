@@ -22,8 +22,7 @@ public class UseCaseConfig {
     }
 
     @Bean
-    public CustomerAnswersCommandUseCase surveyCustomerAnswersCommandUseCaseyUseCase(CustomersRepository customersRepository,
-                                                                                     CustomersAnswerRepository customersAnswerRepository,
+    public CustomerAnswersCommandUseCase surveyCustomerAnswersCommandUseCaseyUseCase(CustomersRepository customersRepository, CustomersAnswerRepository customersAnswerRepository,
                                                                                      CustomersAnswerDetailRepository customersAnswerDetailRepository) {
         return new CustomerAnswersCommandUseCase(customersRepository, customersAnswerRepository, customersAnswerDetailRepository);
     }
