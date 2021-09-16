@@ -7,7 +7,6 @@ import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import static com.robinfood.demo.enums.StatusEnum.nameFromId;
 
@@ -20,18 +19,8 @@ public class SurveyRepositoryAdapter extends AdapterOperations<Survey, SurveyDat
     }
 
     @Override
-    public Mono<Survey> findByName(String var1) {
-        return null;
-    }
-
-    @Override
     public Flux<Survey> findAll() {
         return doQueryMany(() -> repository.findAll())
                 .doOnNext(dto -> dto.setStatus(nameFromId(dto.getStatus())));
-    }
-
-    @Override
-    public Flux<Survey> findAllByStatus(String var1) {
-        return null;
     }
 }

@@ -1,6 +1,6 @@
-package com.robinfood.demo.postgres.customer;
+package com.robinfood.demo.postgres.survey;
 
-import com.robinfood.demo.entity.Customers;
+import com.robinfood.demo.entity.Survey;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,24 +14,25 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CustomerRepositoryAdapterTest {
+public class SurveyRepositoryAdapterTest {
 
-    private final Customers customers = Customers.builder().id("3123QWERTY").name("John").lastName("Doe").phone(3892389L).email("algo@test.com").status("ACTIVE").build();
-    private final Customers customers2 = Customers.builder().id("3123QWERTY2").name("John 2").lastName("Doe 2").phone(3892389L).email("algo2@test.com").status("ACTIVE").build();
+    private final Survey survey = Survey.builder().id("3123QWERTY").name("John").description("description").status("ACTIVE").build();
+    private final Survey survey2 = Survey.builder().id("3123QWERTY").name("John").description("description").status("ACTIVE").build();
 
     @Autowired
-    private CustomerRepositoryAdapter adapter;
+    private SurveyRepositoryAdapter adapter;
+
 
     @Before
     public void saveInitialData() {
-        final Mono<Customers> result = adapter.save(customers).then(adapter.save(customers2));
+        final Mono<Survey> result = adapter.save(survey).then(adapter.save(survey2));
         StepVerifier.create(result).assertNext(customers1 -> {
         }).verifyComplete();
     }
 
     @Test
     public void shouldSave() {
-        final Mono<Customers> result = adapter.save(customers);
+        final Mono<Survey> result = adapter.save(survey);
         StepVerifier.create(result).assertNext(customers1 -> {
         }).verifyComplete();
     }
@@ -39,8 +40,7 @@ public class CustomerRepositoryAdapterTest {
     @Test
     public void shouldFindAll() {
         StepVerifier.create(adapter.findById("3123QWERTY"))
-                .assertNext(tasks -> assertThat(customers))
+                .assertNext(tasks -> assertThat(survey))
                 .verifyComplete();
     }
-
 }
