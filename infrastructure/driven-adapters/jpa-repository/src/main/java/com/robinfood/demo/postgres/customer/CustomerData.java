@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.customer;
+package com.robinfood.demo.postgres.customer;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

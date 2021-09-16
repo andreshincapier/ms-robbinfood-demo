@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.customer;
+package com.robinfood.demo.postgres.customer;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.QueryByExampleExecutor;

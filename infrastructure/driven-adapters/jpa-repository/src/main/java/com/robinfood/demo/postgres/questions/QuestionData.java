@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.survey;
+package com.robinfood.demo.postgres.questions;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,17 +11,17 @@ import javax.persistence.Table;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "survey")
-public class SurveyData {
+@Table(name = "question")
+public class QuestionData {
 
     @Id
     private String id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "content")
+    private String content;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "survey_id_fk")
+    private String surveyId;
 
     @Column(name = "status")
     private String status;

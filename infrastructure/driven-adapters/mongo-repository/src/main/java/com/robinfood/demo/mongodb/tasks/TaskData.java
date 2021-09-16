@@ -1,4 +1,4 @@
-package com.robinfood.demo.mongodb.users;
+package com.robinfood.demo.mongodb.tasks;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.survey;
+package com.robinfood.demo.postgres.survey;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.QueryByExampleExecutor;

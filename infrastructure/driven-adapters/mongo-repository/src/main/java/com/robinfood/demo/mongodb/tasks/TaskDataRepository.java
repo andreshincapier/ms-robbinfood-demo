@@ -1,4 +1,4 @@
-package com.robinfood.demo.mongodb.users;
+package com.robinfood.demo.mongodb.tasks;
 
 import org.springframework.data.repository.query.ReactiveQueryByExampleExecutor;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

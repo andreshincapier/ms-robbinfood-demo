@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.questions;
+package com.robinfood.demo.postgres.questions;
 
 import com.robinfood.demo.entity.Question;
 import com.robinfood.demo.reactive.repository.jpa.AdapterOperations;

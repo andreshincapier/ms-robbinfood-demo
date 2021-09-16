@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.detailanswers;
+package com.robinfood.demo.postgres.detailanswers;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

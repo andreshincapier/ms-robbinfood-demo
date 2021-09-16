@@ -1,4 +1,4 @@
-package com.robinfood.demo.jpa.survey;
+package com.robinfood.demo.postgres.survey;
 
 import com.robinfood.demo.entity.Survey;
 import com.robinfood.demo.reactive.repository.jpa.AdapterOperations;
