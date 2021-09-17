@@ -1,4 +1,4 @@
-package com.robinfood.demo.postgres.customer;
+package com.robinfood.demo.postgres;
 
 import org.reactivecommons.utils.ObjectMapper;
 import org.reactivecommons.utils.ObjectMapperImp;
