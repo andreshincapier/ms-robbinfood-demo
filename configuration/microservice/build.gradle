@@ -1,7 +1,7 @@
 apply plugin: 'org.springframework.boot'
 
 springBoot {
-    mainClassName = 'com.robinfood.demo.MainApplication'
+    mainClassName = 'com.survey.demo.MainApplication'
 }
 
 dependencies {
