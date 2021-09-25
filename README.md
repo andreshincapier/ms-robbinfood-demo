@@ -1,5 +1,5 @@
 # Example microservice
-<a href="https://twitter.com/andreshincapier"><img src="**_https://img.shields.io/twitter/follow/andreshincapier.svg_**?label=Follow" /></a>
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ms-robonfood&metric=alert_status)](https://sonarcloud.io/dashboard?id=ms-robonfood)
 
 Microservice with clean architecture
 
