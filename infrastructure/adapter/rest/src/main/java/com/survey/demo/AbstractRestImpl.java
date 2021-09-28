@@ -26,6 +26,4 @@ public class AbstractRestImpl <D, E> {
     public ModelMapper getMapper() {
         return this.mapper;
     }
-
-
 }

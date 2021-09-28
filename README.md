@@ -1,5 +1,7 @@
 # Example microservice
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ms-robonfood&metric=alert_status)](https://sonarcloud.io/dashboard?id=ms-robonfood)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=andreshincapier_ms-survey-demo&metric=alert_status)](https://sonarcloud.io/dashboard?id=andreshincapier_ms-survey-demo)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=andreshincapier_ms-survey-demo&metric=coverage)](https://sonarcloud.io/dashboard?id=andreshincapier_ms-survey-demo)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=andreshincapier_ms-survey-demo&metric=bugs)](https://sonarcloud.io/dashboard?id=andreshincapier_ms-survey-demo)
 
 Microservice with clean architecture
 
