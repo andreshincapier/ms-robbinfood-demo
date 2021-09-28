@@ -1,6 +1,26 @@
 server:
   port: 8080
 
+app:
+  domain:
+    default-max-age: 3600
+    paths:
+      base: "/experience/"
+      query-handler: "/api"
+    allowed-origins:
+      - "*"
+    allowed-headers:
+      - "X-COMP-ERROR-X"
+  swagger:
+    name: "test"
+    desc: "Microservice"
+    contacto:
+      name: "Andres Hippie"
+      url: "127.0.0.1"
+      email: "andreshincapie82132@gmail.com"
+    license: "Apache 2.0"
+    license-url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+
 spring:
   datasource:
     url: jdbc:postgresql://ec2-54-161-58-21.compute-1.amazonaws.com:5432/d5lve0v6ulfdgs

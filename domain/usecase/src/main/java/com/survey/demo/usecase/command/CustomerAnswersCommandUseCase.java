@@ -1,4 +1,4 @@
-package com.survey.demo.command;
+package com.survey.demo.usecase.command;
 
 import com.survey.demo.dto.CommandResponseDTO;
 import com.survey.demo.dto.UserSurveyAnswersDTO;

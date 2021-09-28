@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':helpers-rest-adapter-commons')
+
+}
+

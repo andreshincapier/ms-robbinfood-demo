@@ -5,8 +5,8 @@ dependencies {
     implementation project(":domain-utility")
     implementation project(":driven-adapters-jpa-repository")
     implementation project(":driven-adapters-mongo-repository")
+    implementation project(":driven-adapters-rest-adapter-repository")
     implementation project(":entry-points-reactive-web")
-    implementation project(":helpers-observability-helper")
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.4'
     implementation 'org.springframework.boot:spring-boot-starter-webflux:2.5.4'

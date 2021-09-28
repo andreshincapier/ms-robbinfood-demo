@@ -9,7 +9,6 @@ FileTree buildFiles = fileTree(rootDir) {
     }
 }
 
-String rootDirPath = rootDir.absolutePath + File.separator
 buildFiles.each(({ File buildFile ->
 
     boolean isDefaultName = 'build.gradle' == buildFile.name

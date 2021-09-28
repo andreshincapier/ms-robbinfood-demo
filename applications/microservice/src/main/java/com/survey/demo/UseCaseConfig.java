@@ -1,7 +1,7 @@
 package com.survey.demo;
 
-import com.survey.demo.command.CustomerAnswersCommandUseCase;
-import com.survey.demo.handler.SurveyHandlerUseCase;
+import com.survey.usecase.command.CustomerAnswersCommandUseCase;
+import com.survey.usecase.handler.SurveyHandlerUseCase;
 import com.survey.demo.repository.*;
 import org.reactivecommons.utils.ObjectMapper;
 import org.reactivecommons.utils.ObjectMapperImp;

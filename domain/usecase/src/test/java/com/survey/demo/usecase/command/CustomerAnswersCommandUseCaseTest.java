@@ -1,6 +1,5 @@
-package com.survey.demo.handler;
+package com.survey.demo.usecase.command;
 
-import com.survey.demo.command.CustomerAnswersCommandUseCase;
 import com.survey.demo.dto.CommandResponseDTO;
 import com.survey.demo.dto.UserAnswersDTO;
 import com.survey.demo.dto.UserSurveyAnswersDTO;
@@ -35,8 +34,7 @@ public class CustomerAnswersCommandUseCaseTest {
     private CustomersAnswerRepository customersAnswerRepository;
     @Mock
     private CustomersAnswerDetailRepository customersAnswerDetailRepository;
-
-
+    
     @Before
     public void init() {
         useCase = new CustomerAnswersCommandUseCase(customersRepository, customersAnswerRepository, customersAnswerDetailRepository);

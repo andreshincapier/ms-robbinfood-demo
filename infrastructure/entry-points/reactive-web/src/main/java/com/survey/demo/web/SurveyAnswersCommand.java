@@ -1,6 +1,6 @@
 package com.survey.demo.web;
 
-import com.survey.demo.command.CustomerAnswersCommandUseCase;
+import com.survey.usecase.command.CustomerAnswersCommandUseCase;
 import com.survey.demo.dto.CommandResponseDTO;
 import com.survey.demo.dto.UserSurveyAnswersDTO;
 import lombok.AllArgsConstructor;

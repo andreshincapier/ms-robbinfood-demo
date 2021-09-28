@@ -1,4 +1,4 @@
-package com.survey.demo.handler;
+package com.survey.demo.usecase.handler;
 
 import com.survey.demo.dto.SurveyQuestionDTO;
 import com.survey.demo.entity.Survey;

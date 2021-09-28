@@ -3,8 +3,7 @@ dependencies {
     compile project(':domain-usecase')
 
     compileOnly 'org.springframework.boot:spring-boot-configuration-processor:2.5.4'
-
     implementation('org.springframework.boot:spring-boot-starter-webflux:2.5.4')
-
+    implementation "io.springfox:springfox-boot-starter:$swaggerVersion"
     testCompile('org.springframework.boot:spring-boot-starter-test:2.5.4')
 }

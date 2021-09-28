@@ -1,4 +1,4 @@
-package com.survey.demo;
+package com.survey.demo.rest;
 
 import org.modelmapper.ModelMapper;
 
