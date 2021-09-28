@@ -1,9 +1,9 @@
-apply from: './main.gradle'
+apply from: "./main.gradle"
 apply plugin: "org.sonarqube"
 
 buildscript {
     ext {
-        springBootVersion = '2.2.2.RELEASE'
+        springBootVersion = "2.2.2.RELEASE"
     }
     repositories {
         mavenCentral()
