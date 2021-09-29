@@ -1,8 +1,9 @@
 package com.survey.demo;
 
-import com.survey.usecase.command.CustomerAnswersCommandUseCase;
-import com.survey.usecase.handler.SurveyHandlerUseCase;
+
 import com.survey.demo.repository.*;
+import com.survey.demo.usecase.command.CustomerAnswersCommandUseCase;
+import com.survey.demo.usecase.handler.SurveyHandlerUseCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

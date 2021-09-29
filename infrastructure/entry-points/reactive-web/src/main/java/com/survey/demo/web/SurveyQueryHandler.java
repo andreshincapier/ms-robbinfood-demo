@@ -2,7 +2,7 @@ package com.survey.demo.web;
 
 import com.survey.demo.dto.SurveyQuestionDTO;
 import com.survey.demo.entity.Survey;
-import com.survey.usecase.handler.SurveyHandlerUseCase;
+import com.survey.demo.usecase.handler.SurveyHandlerUseCase;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

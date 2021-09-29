@@ -3,7 +3,7 @@ package com.survey.demo.web;
 import com.survey.demo.dto.SurveyQuestionDTO;
 import com.survey.demo.entity.Question;
 import com.survey.demo.entity.Survey;
-import com.survey.usecase.handler.SurveyHandlerUseCase;
+import com.survey.demo.usecase.handler.SurveyHandlerUseCase;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.junit.Before;

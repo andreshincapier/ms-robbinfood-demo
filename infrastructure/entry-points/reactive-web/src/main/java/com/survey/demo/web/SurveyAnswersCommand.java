@@ -1,8 +1,8 @@
 package com.survey.demo.web;
 
-import com.survey.usecase.command.CustomerAnswersCommandUseCase;
 import com.survey.demo.dto.CommandResponseDTO;
 import com.survey.demo.dto.UserSurveyAnswersDTO;
+import com.survey.demo.usecase.command.CustomerAnswersCommandUseCase;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

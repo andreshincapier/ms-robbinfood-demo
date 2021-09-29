@@ -1,9 +1,9 @@
 package com.survey.demo.web;
 
-import com.survey.usecase.command.CustomerAnswersCommandUseCase;
 import com.survey.demo.dto.CommandResponseDTO;
 import com.survey.demo.dto.UserAnswersDTO;
 import com.survey.demo.dto.UserSurveyAnswersDTO;
+import com.survey.demo.usecase.command.CustomerAnswersCommandUseCase;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.junit.Before;
