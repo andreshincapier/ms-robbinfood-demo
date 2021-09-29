@@ -17,8 +17,6 @@ public class MainApplication {
 
     @Bean
     public CommandLineRunner lineRunner() {
-        return args -> {
-            MemUtils.printInfo();
-        };
+        return args -> MemUtils.printInfo();
     }
 }

@@ -4,20 +4,20 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import java.text.NumberFormat;
-import java.util.logging.Logger;
 
+@Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class MemUtils {
     public static void printInfo() {
         final MemInfo memInfo = getMemInfo();
-        final Logger log = Logger.getGlobal();
         log.info("========================== Memory Info ==========================");
-        log.info("Free memory: " + formatInMB(memInfo.getFreeMemory()));
-        log.info("Allocated memory: " + formatInMB(memInfo.allocatedMemory));
-        log.info("Max memory: " + formatInMB(memInfo.getMaxMemory()));
-        log.info("Total free memory: " + formatInMB(memInfo.getTotalFreeMemory()));
+        log.info("Free memory: {}", formatInMB(memInfo.getFreeMemory()));
+        log.info("Allocated memory: {}", formatInMB(memInfo.allocatedMemory));
+        log.info("Max memory: {}", formatInMB(memInfo.getMaxMemory()));
+        log.info("Total free memory: {}", formatInMB(memInfo.getTotalFreeMemory()));
         log.info("=================================================================");
     }
 
@@ -29,10 +29,10 @@ public class MemUtils {
     public static MemInfo getMemInfo() {
         final Runtime runtime = Runtime.getRuntime();
         return MemInfo.builder()
-            .allocatedMemory(runtime.totalMemory())
-            .freeMemory(runtime.freeMemory())
-            .maxMemory(runtime.maxMemory())
-            .build();
+                .allocatedMemory(runtime.totalMemory())
+                .freeMemory(runtime.freeMemory())
+                .maxMemory(runtime.maxMemory())
+                .build();
     }
 
     @Data
