@@ -1,8 +1,0 @@
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
-    compile 'org.reactivecommons.utils:object-mapper-api:0.1.0'
-
-    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.2.0'
-//    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
-    testCompile 'org.reactivecommons.utils:object-mapper:0.1.0'
-}

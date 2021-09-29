@@ -5,9 +5,11 @@ dependencies {
     compile project(":domain-utility")
     compile project(":entry-points-reactive-web")
     compile project(":driven-adapters-jpa-repository")
-    compile project(":driven-adapters-mongo-repository")
+    compile project(":driven-adapters-mongodb-repository")
     compile project(":driven-adapters-rest-adapter-repository")
 
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile 'org.reactivecommons:async-commons-starter:0.0.7-beta1'
     compile 'org.springframework.boot:spring-boot-starter-actuator:2.5.4'
     compile 'org.springframework.boot:spring-boot-starter-webflux:2.5.4'
     compile 'org.reactivecommons.utils:object-mapper:0.1.0'

@@ -22,11 +22,21 @@ app:
     license-url: "https://www.apache.org/licenses/LICENSE-2.0.html"
 
 spring:
+  data:
+    mongodb:
+      uri: "mongodb://127.0.0.1:27017/admin?directConnection=true&serverSelectionTimeoutMS=2000"
+      auto-index-creation: false
   datasource:
     url: jdbc:postgresql://ec2-54-161-58-21.compute-1.amazonaws.com:5432/d5lve0v6ulfdgs
     username: wptvtfajldujgq
     password: 3897c9bcfb553a9b6a8ac4348ba6df4316f86fbe3c3784a311dd5b3bb3d1e750
     driver-class-name: org.postgresql.Driver
+    platform: postgres
+    hikari:
+      maximum-pool-size: 25
+      connection-timeout: 15000
+      idle-timeout: 500000
+      max-lifetime: 900000
   jpa:
     database: POSTGRESQL
     open-in-view: false

@@ -1,7 +1,0 @@
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive:2.5.4'
-    compile project(':helpers-reactive-repository-commons')
-    compile project(':domain-model')
-
-    testCompile 'org.reactivecommons.utils:object-mapper:0.1.0'
-}
