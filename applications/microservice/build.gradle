@@ -1,16 +1,16 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
-    implementation project(":domain-usecase")
-    implementation project(":domain-utility")
-    implementation project(":driven-adapters-jpa-repository")
-    implementation project(":driven-adapters-mongo-repository")
-    implementation project(":driven-adapters-rest-adapter-repository")
-    implementation project(":entry-points-reactive-web")
+    compile project(":domain-usecase")
+    compile project(":domain-utility")
+    compile project(":entry-points-reactive-web")
+    compile project(":driven-adapters-jpa-repository")
+    compile project(":driven-adapters-mongo-repository")
+    compile project(":driven-adapters-rest-adapter-repository")
 
-    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.4'
-    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.5.4'
-    implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
+    compile 'org.springframework.boot:spring-boot-starter-actuator:2.5.4'
+    compile 'org.springframework.boot:spring-boot-starter-webflux:2.5.4'
+    compile 'org.reactivecommons.utils:object-mapper:0.1.0'
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.9'
-    implementation "io.springfox:springfox-boot-starter:3.0.0"
+    compile "io.springfox:springfox-boot-starter:3.0.0"
 }
